@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+</head>
+<body> 
+    <div  class="father">
+        <div class="son">
+            获取数据
+        </div>
+    </div>
+</body>
+<style>
+    *{
+        border:0px;
+        padding:0px;
+        margin: 0px;
+    }
+.father{
+    width:300px;
+    height: 200px;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* overflow: hidden; */
+}
+.son{
+    /* display:  block;     */
+    width:100px;
+    height:  30px;
+    background-color:  blue;
+    /* margin: 0 auto; */
+     /* margin-top:85px; */
+}
+
+</style>
+<script>
+
+       $('.son').click(function(e){
+console.log('sdddd');
+          $.ajax({
+                    dataType: 'json',
+                    // jsonp:'call',
+                    data: {
+                        data:'hjeeh'
+                    },                      
+                    url: 'http://localhost:3001/test?callback=?',                     
+                    success: function(data) {
+                        console.log('success');
+                        console.log(JSON.stringify(data));
+                    }
+                });
+
+       });
+
+
+
+
+</script>
+</html>
